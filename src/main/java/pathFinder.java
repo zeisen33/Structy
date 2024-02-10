@@ -2,7 +2,6 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
 // Node class is named already inside maxPathSum so this errors.
 //class Node<T> {
 //    T val;
@@ -34,5 +33,6 @@ class Source {
 
         return Collections.reverse(finalList);
     }
+}
 
 
