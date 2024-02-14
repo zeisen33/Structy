@@ -25,7 +25,7 @@ class Source {
             return List.of(root.val);
         }
 
-        ArrayList<T> finalList = new ArrayList<>();
+        List<T> finalList = new ArrayList<>();
 
         finalList.add(root.val);
         finalList.addAll(pathFinder(root.left, target));
