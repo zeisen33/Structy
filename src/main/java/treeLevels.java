@@ -14,8 +14,11 @@ class Source {
             SimpleEntry<Node<T>, Integer> entry = queue.remove();
             Node<T> node = entry.getKey();
             int level = entry.getValue();
+
+            // if we're on the current level, add to sublist
             if (level == currLevel) {
                 subList.add(node.val);
+                // If not on current level, add the sublist to final and reset sublist with new node
             } else {
                 finalList.add(subList);
                 currLevel += 1;
