@@ -1,13 +1,15 @@
+package BinaryTree;
+
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 
-//class Node<T> {
+//class BinaryTree.Node<T> {
 //    T val;
-//    Node<T> left;
-//    Node<T> right;
+//    BinaryTree.Node<T> left;
+//    BinaryTree.Node<T> right;
 //
-//    public Node(T val) {
+//    public BinaryTree.Node(T val) {
 //        this.val = val;
 //        this.left = null;
 //        this.right = null;

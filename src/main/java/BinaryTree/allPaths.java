@@ -1,3 +1,5 @@
+package BinaryTree;
+
 class Source {
     public static <T> List<List<T>> allTreePaths(Node<T> root) {
         if (root == null) {
