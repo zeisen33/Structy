@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.List;
 
 class Source {
+    // Recursive DFS
     public static boolean hasPath(Map<String, List<String>> graph, String src, String dst) {
         if (src == dst) {
             return true;
