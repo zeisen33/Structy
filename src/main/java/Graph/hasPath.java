@@ -3,6 +3,7 @@ package Graph;
 // Similar traversal as binary tress.
 // Nodes point to a list of other nodes.
 // List of other nodes can be empty.
+// Start at source src, go to destination dst
 
 import java.util.Map;
 import java.util.List;
