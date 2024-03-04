@@ -21,4 +21,21 @@ class Source {
         }
         return false;
     }
+
+    public static boolean hasPath(Map<String, List<String>> graph, String src, String dst) {
+        ArrayDeque<String> queue = new ArrayDeque<>();
+        queue.add(src);
+
+        while (!queue.isEmpty()) {
+            String current = queue.remove();
+            if (current == dst) {
+                return true;
+            }
+            for (String neighbor : graph.get(current)) {
+                queue.add(neighbor);
+            }
+        }
+
+        return false;
+    }
 }
