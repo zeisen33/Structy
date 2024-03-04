@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.List;
 
 class Source {
-    // Recursive DFS
+    // Recursive DFS, O(e) where e = # edges
     public static boolean hasPath(Map<String, List<String>> graph, String src, String dst) {
         if (src == dst) {
             return true;
@@ -22,6 +22,7 @@ class Source {
         return false;
     }
 
+    // BFS, O(e)
     public static boolean hasPath(Map<String, List<String>> graph, String src, String dst) {
         ArrayDeque<String> queue = new ArrayDeque<>();
         queue.add(src);
