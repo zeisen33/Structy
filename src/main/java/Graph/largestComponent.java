@@ -10,6 +10,8 @@ class Source {
         int max = 0;
         for (int node : graph.keySet()) {
             int size = countNodesInComponent(graph, node, visited);
+
+            // cannot call countNodesInComponent twice because it changes visited;
             if (size > max) {
                 max = size;
             }
