@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.HashSet;
 import java.util.AbstractMap.SimpleEntry;
 
+
+// O(#rows * #cols) because thats the max number of positions we check
 class Source {
     public static int islandCount(List<List<String>> grid) {
         int count = 0;
