@@ -4,6 +4,8 @@ import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
 
+
+// distance hashmap is for memoization
 class Source {
     public static int longestPath(Map<String, List<String>> graph) {
         HashMap<String, Integer> distance = new HashMap<>();
