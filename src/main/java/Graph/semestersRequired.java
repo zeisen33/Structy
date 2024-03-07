@@ -32,7 +32,7 @@ class Source {
         if (visited.containsKey(course)) {
             return visited.get(course);
         }
-        // visited.put(course, 1);
+        // visited.put(course, 1); Doesn't work because this overwrites previously found values
         if (!graph.containsKey(course)) {
             return 1;
         }
@@ -43,6 +43,7 @@ class Source {
         for (Integer prereq : graph.get(course)) {
             // System.out.println(prereq);
             int prereqCount = longestPath(prereq, graph, visited);
+            // Set prereq max in visited
             visited.put(prereq, prereqCount);
             if (prereqCount > max) {
                 max = prereqCount;
