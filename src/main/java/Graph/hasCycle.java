@@ -4,6 +4,11 @@ import java.util.Map;
 import java.util.List;
 import java.util.HashSet;
 
+
+// This is known as white-grey-black algorithm. Keep track of inProgress and visited.
+// If reach a visited, move to next. If reach an inProgress, return true. After visiting,
+// add to inProgress. After the whole search is done, add everything from inProgress
+// into visited then move to the next starting node.
 class Source {
     public static boolean hasCycle(Map<String, List<String>> graph) {
         HashSet<String> inProgress = new HashSet<>();
