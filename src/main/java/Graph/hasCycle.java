@@ -18,8 +18,9 @@ class Source {
             if (explore(node, inProgress, visited, graph)) {
                 return true;
             }
-            visited.addAll(inProgress);
-            inProgress.clear();
+            // Below is not consistent, depends on stack order
+//            visited.addAll(inProgress);
+//            inProgress.clear();
         }
         return false;
     }
@@ -40,5 +41,8 @@ class Source {
                 return true;
             }
         }
+        // Have to clear inProgress and add to visited here
+        inProgress.remove(node);
+        visited.add(node);
         return false;
     }
