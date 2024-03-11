@@ -31,6 +31,8 @@ class Source {
         // if (graph.get(course).isEmpty()) {
         //   return false;
         // }
+
+        // graph.get(course) returns null for empty list of neighbors. Need to explicitly add an empty list instead in graph construction.
         for (Integer neighbor : graph.get(course)) {
             if (explore(neighbor, graph, inProgress, visited)) {
                 return true;
