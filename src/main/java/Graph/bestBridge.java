@@ -3,6 +3,8 @@ import java.util.List;
 import java.util.HashSet;
 import java.util.ArrayDeque;
 
+
+// Have to find the starting island, then BFS from each pos in starting island looking for an L that isn't in the starting island
 class Source {
     public static int bestBridge(List<List<String>> grid) {
         HashSet<List<Integer>> island1 = new HashSet<>();
