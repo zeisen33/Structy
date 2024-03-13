@@ -18,7 +18,8 @@ class Source {
             if (explore(node, inProgress, visited, graph)) {
                 return true;
             }
-            // Below is not consistent, depends on stack order
+            // Below is not consistent, depends on graph.keySet() order. Fails Tests 1 and 6 if a is first
+            // because checking b adds c to inProgress, then checks C.
 //            visited.addAll(inProgress);
 //            inProgress.clear();
         }
