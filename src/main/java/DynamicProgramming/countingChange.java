@@ -23,10 +23,6 @@ class Source {
         int val = coins.get(coinIdx);
         int count = 0;
         for (int i = 0; i <= amount / val; i++) {
-            // if (coinIdx >= coins.size()) {
-            //   coinIdx = 0;
-            //   continue;
-            // }
             count += countingChange(amount - (i * val), coins, memo, coinIdx + 1);
         }
         memo.put(List.of(amount, coinIdx), count);
