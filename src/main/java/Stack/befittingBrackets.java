@@ -28,3 +28,32 @@ class Source {
         }
         return opens.isEmpty();
     }
+
+    import java.util.HashMap;
+import java.util.Stack;
+
+    class Source {
+        public static boolean befittingBrackets(String str) {
+            HashMap<Character, Character> brackets = new HashMap<>();
+            brackets.put('{', '}');
+            brackets.put('(', ')');
+            brackets.put('[', ']');
+            Stack<Character> stack = new Stack<>();
+
+            for (int i = 0; i < str.length(); i++) {
+                char ch = str.charAt(i);
+                if (brackets.containsKey(ch)) {
+                    stack.push(brackets.get(ch));
+                } else {
+                    if (stack.isEmpty()) {
+                        return false;
+                    }
+                    if (ch == stack.peek()) {
+                        stack.pop();
+                    } else {
+                        return false;
+                    }
+                }
+            }
+            return stack.isEmpty();
+        }
