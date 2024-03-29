@@ -3,6 +3,9 @@ package Stack;
 import java.util.Stack;
 
 class Source {
+    // Have to think about what each bracket represents.
+    // At end, the stack should have only 1 element left, the total score.
+}
     public static int nestingScore(String str) {
         Stack<Integer> stack = new Stack<>();
         stack.push(0);
