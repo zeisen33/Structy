@@ -1,28 +1,28 @@
 package ExhaustiveRecursion;
 
-public static List<List<String>> createCombinations(List<String> items, int k) {
-    if (items.size() == k) {
-        return List.of(List.of());
-    }
+import java.util.List;
+import java.util.ArrayList;
 
-
-    String firstEl = items.get(0);
-    List<String> rest = items.subList(1, items.size());
-    List<List<String>> finalItems = new ArrayList<>();
-
-    for (String remainingItem : rest) {
-        List<List<String>> resWith = createCombinations(rest, k - 1);
-        List<List<String>> resWithout = createCombinations(rest, k);
-
-        for (List<String> res : resWith) {
-            res.add(firstEl);
+class Source {
+    public static List<List<String>> createCombinations(List<String> items, int k) {
+        if (k == 0) {
+            return List.of(List.of());
+        } else if (k > items.size()) {
+            return List.of();
         }
 
-        finalItems.addAll(resWith);
 
-        finalItems.addAll(resWithout);
+        String firstEl = items.get(0);
+        List<String> rest = items.subList(1, items.size());
+        List<List<String>> finalItems = new ArrayList<>();
 
+        for (List<String> combo : createCombinations(rest, k - 1)) {
+            List<String> newCombo = new ArrayList<>(combo);
+            newCombo.add(firstEl);
+            finalItems.add(newCombo);
+        }
+
+        finalItems.addAll(createCombinations(rest, k));
+
+        return finalItems;
     }
-
-    return finalItems;
-}
