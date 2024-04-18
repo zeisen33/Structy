@@ -3,6 +3,7 @@ package MixedRecall;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashSet;
 
 class Node<T> {
     T val;
@@ -19,7 +20,7 @@ class Node<T> {
 class Source {
     public static String lowestCommonAncestor(Node<String> root, String val1, String val2) {
         ArrayList<String> path1 = getPath(root, val1);
-        ArrayList<String> path2 = getPath(root, val2);
+        HashSet<String> path2 = new HashSet<>(getPath(root, val2));
         System.out.println(path1);
         System.out.println(path2);
 
