@@ -26,7 +26,7 @@ class Source {
 
         curr = head;
         while (!stack.isEmpty()) {
-            if (curr != stack.pop()) {
+            if (curr.val != stack.pop().val) {
                 return false;
             }
             curr = curr.next;
