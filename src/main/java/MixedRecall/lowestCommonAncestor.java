@@ -56,6 +56,9 @@ class Source {
         return null;
     }
 class Source {
+
+        // O(n^2) time as O(n) lowestCommonAncestor calls can each call O(n) dfsContains
+}
     public static String lowestCommonAncestor(Node<String> root, String val1, String val2) {
         if (dfsContains(root.left, val1) && dfsContains(root.left, val2)) {
             return lowestCommonAncestor(root.left, val1, val2);
