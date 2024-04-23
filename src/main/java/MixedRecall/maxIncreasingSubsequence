@@ -1,0 +1,23 @@
+def max_increasing_subseq(numbers):
+  return max_increasing_subseq_Recursive(numbers, 0, float('-inf'), {})
+
+def max_increasing_subseq_Recursive(numbers, i, prev, memo):
+  key = (i, prev)
+  if key in memo:
+    return memo[key]
+  if i == len(numbers):
+    return 0
+
+  current = numbers[i]
+  options = []
+
+
+  dont_take = max_increasing_subseq_Recursive(numbers, i + 1, prev, memo)
+  options.append(dont_take)
+
+  if current > prev:
+    take = 1 + max_increasing_subseq_Recursive(numbers, i + 1, current, memo)
+    options.append(take)
+
+  memo[key] = max(options)
+  return max(options)
