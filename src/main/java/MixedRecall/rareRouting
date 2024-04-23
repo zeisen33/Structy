@@ -1,0 +1,29 @@
+def rare_routing(n, roads):
+  graph = buildGraph(n, roads)
+  visited = set()
+  prev = -1
+  # print(graph)
+  nodes = traverse(graph, 0, visited, None)
+  return nodes and len(visited) == n
+
+def traverse(graph, start, visited, prev):
+  if start in visited:
+    return False
+
+  visited.add(start)
+  for neighbor in graph[start]:
+    if neighbor != prev and not traverse(graph, neighbor, visited, start):
+      return False
+
+  return True
+
+def buildGraph(n, roads):
+  graph = {}
+  for i in range(n):
+    graph[i] = []
+
+  for road in roads:
+    graph[road[0]].append(road[1])
+    graph[road[1]].append(road[0])
+
+  return graph
