@@ -1,0 +1,21 @@
+def breaking_boundaries(m, n, k, r, c):
+  return breaking_boundaries_recursive(m, n, k, r, c, {})
+
+def breaking_boundaries_recursive(m, n, k, r, c, memo):
+  key = (k, r, c)
+  if r < 0 or r >= m or c < 0 or c >= n:
+    return 1
+
+  if key in memo:
+    return memo[key]
+
+  if k == 0:
+    return 0
+
+  right = breaking_boundaries_recursive(m, n, k - 1, r, c + 1, memo)
+  left = breaking_boundaries_recursive(m, n, k - 1, r, c - 1, memo)
+  up = breaking_boundaries_recursive(m, n, k - 1, r - 1, c, memo)
+  down = breaking_boundaries_recursive(m, n, k - 1, r + 1, c, memo)
+
+  memo[key] = right + left + up + down
+  return right + left + up + down
