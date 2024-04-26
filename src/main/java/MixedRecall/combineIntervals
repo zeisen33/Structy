@@ -1,0 +1,14 @@
+def combine_intervals(intervals):
+  sorted_intervals = sorted(intervals, key=lambda interval:interval[0])
+  combined = [ sorted_intervals[0] ]
+
+  for current_interval in sorted_intervals[1:]:
+    current_start, current_end = current_interval
+    last_start, last_end = combined[-1]
+    if last_end >= current_start:
+      if current_end > last_end:
+        combined[-1] = (last_start, current_end)
+    else:
+      combined.append(current_interval)
+
+  return combined
