@@ -1,0 +1,15 @@
+def binary_search(numbers, target):
+  min = 0
+  max = len(numbers) - 1
+
+  while min <= max:
+    mid = (min + max) // 2
+
+    if target < numbers[mid]:
+      max = mid - 1
+    elif target > numbers[mid]:
+      min = mid + 1
+    else:
+      return mid
+
+  return -1
