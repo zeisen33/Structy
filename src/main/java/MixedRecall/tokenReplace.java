@@ -34,3 +34,17 @@ class Source {
 
         return newStr;
     }
+
+    // Easier to Write, slightly faster but same order of complexity
+
+    class Source {
+        public static String tokenReplace(String s, Map<String, String> tokens) {
+            if (s.indexOf("$") == -1) {
+                return s;
+            }
+
+            int i = s.indexOf("$");
+            int j = s.substring(i + 1).indexOf("$");
+
+            return s.substring(0, i) + tokens.get(s.substring(i, i + j + 2)) + tokenReplace(s.substring(i + j + 2), tokens);
+        }
