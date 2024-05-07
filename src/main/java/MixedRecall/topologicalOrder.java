@@ -1,5 +1,9 @@
 package MixedRecall;
 
+// Note that this treats shorter words as before longer if they both start with the shorter word
+// e.g. "app" comes before "application"
+
+
 // Times out
 //class Source {
 //    public static List<String> topologicalOrder(Map<String, List<String>> graph) {
